@@ -16,6 +16,6 @@ public class SaveStateTests extends TestCase{
 		PredictionGame game1 = PredictionGame.makeDefaultPredictionGame();
 		assertTrue(playerConst(game1));
 		assertEquals(game1, game1);
-	}
+	} 
 
 }
