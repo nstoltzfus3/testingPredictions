@@ -13,6 +13,9 @@ public class Attack implements Action<PredictionGame>{
 	private ArrayList<Position> damageArea;
 	private ArrayList<Unit> damagedUnits;
 	
+	/**
+	 * Constructor for an Attack Action Object.
+	 */
 	public Attack(char direction, Unit unit) {
 		this.damageArea = unit.getAttackArea(direction);
 		this.direction = direction;
@@ -65,7 +68,10 @@ public class Attack implements Action<PredictionGame>{
 	}
 
 
-
+	/**
+	 * Determines whether an implementation of this action is valid or not.
+	 * Overwrites the abstract class Action's implementation of isValid 
+	 */
 	@Override
 	public boolean isValid(PredictionGame game) {
 		if (unit.getAttack()) {
@@ -84,6 +90,10 @@ public class Attack implements Action<PredictionGame>{
 
 	}
 
+	/**
+	 * Carries out the actual damaging to the units within the damage Area. and clearing out of dead Units off the map.
+	 * Still some minor problems with the AI I think but no worries.
+	 */
 	@Override
 	public void update(PredictionGame game) {
 		unit.setDirection(direction);
